@@ -6,6 +6,9 @@ import com.shopme.common.entity.User;
 import com.shopme.shopmebackend.repositores.RoleRepository;
 import com.shopme.shopmebackend.repositores.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,6 +20,7 @@ import java.util.NoSuchElementException;
 @Service
 @Transactional
 public class UserService {
+    public static final int USERS_PER_PAGE = 4;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -27,6 +31,11 @@ public class UserService {
 
     public List<User> listAll() {
         return (List<User>) userRepo.findAll();
+    }
+
+    public Page<User> listByPage(int pageNum) {
+        Pageable pageable = PageRequest.of(pageNum - 1, USERS_PER_PAGE);
+        return userRepo.findAll(pageable);
     }
 
     public List<Role> listRoles() {
@@ -48,7 +57,6 @@ public class UserService {
         }else{
             encodePassword(user);
         }
-
         userRepo.save(user);
         return user;
     }

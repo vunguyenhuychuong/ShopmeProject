@@ -7,6 +7,7 @@ import com.shopme.shopmebackend.FileUploadUtil;
 import com.shopme.shopmebackend.UserNotFoundException;
 import com.shopme.shopmebackend.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,8 +29,20 @@ public class UserController {
     private UserService service;
 
     @GetMapping("/users")
-    public String listAll(Model model) {
-        List<User> listUsers = service.listAll();
+    public String listFirstPage(Model model) {
+
+        return listByPage(1, model);
+
+    }
+
+    @GetMapping("/users/page/{pageNum}")
+    public String listByPage(@PathVariable(name = "pageNum") int pageNum,Model model) {
+        Page<User> page = service.listByPage(pageNum);
+        List<User> listUsers = page.getContent();
+
+        System.out.println("PageNum = " + pageNum);
+        System.out.println("Total elements = " + page.getTotalElements());
+        System.out.println("Total pages = " + page.getTotalPages());
         model.addAttribute("listUsers", listUsers);
         return "users";
     }
@@ -53,7 +66,6 @@ public class UserController {
             String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
             if(fileName.contains(" ")){
                 fileName = fileName.replaceAll(" ", "_");
-                System.out.println("CHạy qua đây rồi");
             }
             user.setPhotos(fileName);
             User savedUser = service.save(user);
@@ -65,19 +77,6 @@ public class UserController {
             if(user.getPhotos().isEmpty()) user.setPhotos(null);
             service.save(user);
         }
-
-
-
-        /*String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-        if(fileName.contains(" ")) {
-            fileName = fileName.replace(" ", "_");
-        }*/
-
-        /*user.setPhotos(fileName);
-        User savedUser = service.save(user);
-        String uploadDir = "user-photos/" + savedUser.getId();
-
-        FileUploadUtil.cleanDir(uploadDir);*/
 
         redirectAttributes.addFlashAttribute("message", "The user has been saved successfully!");
         return "redirect:/users";
