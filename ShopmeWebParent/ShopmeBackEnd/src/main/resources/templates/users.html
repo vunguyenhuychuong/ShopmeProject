@@ -74,7 +74,7 @@
                     <th>Images</th>
                     <th>E-mail</th>
                     <th>
-                        <a th:if="${sortField != 'firstName'}"
+                        <a th:if="${sortField != 'firstName'}" class="text-white"
                             th:href="@{'/users/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${sortDir}}">
                             First Name
                         </a>
