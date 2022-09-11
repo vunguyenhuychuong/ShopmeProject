@@ -35,6 +35,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../../jar_files/super-csv-2.4.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.22" level="project" />
@@ -49,6 +58,8 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.22" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.22" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.29" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.6.10" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.supercsv:super-csv:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-json:2.6.10" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3" level="project" />
