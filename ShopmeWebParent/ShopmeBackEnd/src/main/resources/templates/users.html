@@ -199,7 +199,7 @@
         <span>No users found</span>
     </div>
 
-    <div th:if="${totalItems > 0 }">
+    <div th:if="${totalPages > 1 }">
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
                 <li th:class="${currentPage > 1 ? 'page-item' :  'page-item disabled'}">
