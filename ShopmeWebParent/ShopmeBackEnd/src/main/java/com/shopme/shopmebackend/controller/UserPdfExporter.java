@@ -36,7 +36,7 @@ public class UserPdfExporter extends AbstractExporter {
         PdfPTable table = new PdfPTable(6);
         table.setWidthPercentage(100f);
         table.setSpacingBefore(10);
-        table.setWidths(new float[] {1.2f, 3.5f, 3.0f, 3.0f, 3.0f, 1.7f});
+        table.setWidths(new float[] {1.2f, 3.5f, 3.0f,3.0f, 3.0f, 3.0f, 1.7f});
 
         writeTableHeader(table);
         writeTableData(table, listUsers);
@@ -53,6 +53,7 @@ public class UserPdfExporter extends AbstractExporter {
             table.addCell(user.getEmail());
             table.addCell(user.getFirstName());
             table.addCell(user.getLastName());
+            table.addCell(user.getPassword());
             table.addCell(user.getRoles().toString());
             table.addCell(String.valueOf(user.isEnabled()));
         }
@@ -76,6 +77,9 @@ public class UserPdfExporter extends AbstractExporter {
         table.addCell(cell);
 
         cell.setPhrase(new Phrase("Last Name", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Password", font));
         table.addCell(cell);
 
         cell.setPhrase(new Phrase("Roles ", font));

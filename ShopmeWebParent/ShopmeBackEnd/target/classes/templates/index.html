@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -52,6 +53,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/settings}">Settings</a>
+                </li>
+                <li>
+                    <span class="fa fa-user fa-2x icon-silver"></span>
                 </li>
             </ul>
         </div>

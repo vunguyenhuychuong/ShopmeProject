@@ -4,10 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import javax.persistence.Entity;
-
 @SpringBootApplication
-@EntityScan({"com.shopme.common.entity", "com.shopme.backend"})
+@EntityScan({"com.shopme.common.entity"})
 public class ShopmeBackEndApplication {
 
     public static void main(String[] args) {

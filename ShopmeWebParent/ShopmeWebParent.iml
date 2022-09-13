@@ -95,7 +95,7 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.6.6" level="project" />
-    <orderEntry type="module" module-name="ShopmeCommon" />
+    <orderEntry type="library" name="Maven: org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.7" level="project" />
@@ -119,5 +119,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:5.3.22" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.22" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:5.3.22" level="project" />
+    <orderEntry type="module" module-name="ShopmeCommon" />
   </component>
 </module>
