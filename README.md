@@ -7,6 +7,32 @@ ShopmeProject is a website manage Products and Users for Now. It is a project st
 - [3. JDK 18 version]
 - [4. Spring Boot version 2.6.10 upper ]
 - [5. JUnit Test ]
+[II. Introduction ]
+- Hibernate is used as JPA implementation by default
+- Repositories:
+  + Extend CRUDRepository, PagingAndSortingRepository
+  + Use pre-defined methods: save(), findAll() , findById() , deleteById()
+  + Use custom queries with @Query annotation
+  + Use @Modyfying and @Transactional for Update queries
+  + Pagination : Pageable, Sort, Page,PageRequest
+- Entities: 
+  + Code entity class first -> create table (forward engineering)
+  + Use @Transient for getter methods that do not relate to field mapping
+- Spring Security
+  + Implements a simple RESTFUL webservice using @RestController (UserRestController)
+  + Run internally (no public API) : just return a String Not Json.
+- BootStrap, CSS and HTML
+  + HTML5 define standard attributes for form fields validation
+  + Font Awesome icons, CSS media queries to target different screen size.
+- Thymeleaf
+  + Integrated very well with Spring MVC
+  + th:each- > iterate a collection
+  + th:propertyName -> generate value for HTML attribute(th:src, th:href,th:class, th:action)
+- Architecture: 
+  + Repository Layer: entity classesand queries.
+  + Service layer :bussiness/domain-specific logics.
+  + Controller layer :request handling.
+  + View layer: UI code generation.
 
 ## FEATURE
 -USER
@@ -15,7 +41,7 @@ ShopmeProject is a website manage Products and Users for Now. It is a project st
   * Check validate Unique Emails, empty fields When create user.
   * SortList filter by ascending, descending ID, FirstName, LastName, Enabled(Status).
   * Pagnitation for User List , Search keyword textbox.
-  * Export CSV | Excel | PDF  file Excel List User
+  * Export CSV | Excel | PDF  file Excel List User (Using SuperCSV,Apache Poi, OpenPDF) 
   
   
   
