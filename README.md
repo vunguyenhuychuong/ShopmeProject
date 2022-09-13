@@ -47,7 +47,7 @@ ShopmeProject is a website manage Products and Users for Now. It is a project st
   
   ## SCREEN SHOT PROJECT
   * Admin Page
-  <img src="https://user-images.githubusercontent.com/86512368/189511856-0d42aa2b-3b41-432b-b34a-2a329697be31.png" >
+  <img src="https://user-images.githubusercontent.com/86512368/189934378-c622bd86-3376-4fd1-85d8-ea5026d88bf2.png" >
   
   <img src="https://user-images.githubusercontent.com/86512368/189726097-9fb4c15b-c48d-49b8-bc79-50f918ee75fa.png" >
  
