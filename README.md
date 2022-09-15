@@ -50,13 +50,17 @@ ShopmeProject is a website manage Products and Users for Now. It is a project st
   ## SCREEN SHOT PROJECT
   * Admin Page
   <img src="https://user-images.githubusercontent.com/86512368/189934378-c622bd86-3376-4fd1-85d8-ea5026d88bf2.png" >
-  - Default login page
-  - Authecation is required by default
-  - Show Spring-generated error message in custom login page using attribute SPRING_SECURITY_LAST_EXCEPTION in session
+  * Default login page
+  * Authecation is required by default
+  * Show Spring-generated error message in custom login page using attribute SPRING_SECURITY_LAST_EXCEPTION in session
+  * Use @AuthecationPrincipal to get the UserDetails object representing the authecation user
+  * Create a class of type UserDetails to represent the currently logged-in user
+  * Default cookie: JSESSIONID (expires when session end)
+  * Remember Me implemnentation: hash-based token(cookie only) and persistent token(cookies vs database) expire afetr 14 days
   
   <img src="https://user-images.githubusercontent.com/86512368/189726097-9fb4c15b-c48d-49b8-bc79-50f918ee75fa.png" >
   - Every POST request must include -csrf token -> prevent Cross site Request  Forgery (CSRF) attacks
-  
+  - Spring security Filter intercepts requests to proccess authecatication
   <img src="https://user-images.githubusercontent.com/86512368/190321422-33e7d08c-4ba3-4074-a65d-9c7893b78667.png" >
  
 
